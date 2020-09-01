@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:login_app/Api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:login_app/Dashboard.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class LogIn extends StatefulWidget {
 
@@ -128,13 +130,20 @@ class _LogInState extends State<LogIn>{
   Container SignInButton(){
     return Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 10, 35, 10),
+            child: FlatButton(
+              onPressed: ()=> launch(''),
+              child: Text('Forget Password?',style: TextStyle(color: Colors.blue,),),
+            ),
+          ),
           Container(
             height: 50,
             width: 100,
             color: Colors.blue,
-            margin: EdgeInsets.all(10),
+            margin: EdgeInsets.fromLTRB(35, 10, 10, 10),
             child: FlatButton(
               onPressed: _onPressed,
               child: Text('Sign In',style: TextStyle(color: Colors.white,),),

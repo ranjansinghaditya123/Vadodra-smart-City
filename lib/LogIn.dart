@@ -5,6 +5,7 @@ import 'package:login_app/Dashboard.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
+
 class LogIn extends StatefulWidget {
 
   LogIn({Key key , this.title}) : super(key : key);
@@ -127,30 +128,38 @@ class _LogInState extends State<LogIn>{
 
   }
 
-  Container SignInButton(){
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.fromLTRB(10, 10, 35, 10),
-            child: FlatButton(
-              onPressed: ()=> launch(''),
-              child: Text('Forget Password?',style: TextStyle(color: Colors.blue,),),
-            ),
+  Column SignInButton(){
+    return Column(
+      children: <Widget>[
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 10, 35, 10),
+                child: FlatButton(
+                  onPressed: ()=> launch(''),
+                  child: Text('Forget Password?',style: TextStyle(color: Colors.blue,),),
+                ),
+              ),
+              Container(
+                height: 50,
+                width: 100,
+                color: Colors.blue,
+                margin: EdgeInsets.fromLTRB(35, 10, 10, 10),
+                child: FlatButton(
+                  onPressed: _onPressed,
+                  child: Text('Sign In',style: TextStyle(color: Colors.white,),),
+                ),
+              ),
+            ],
           ),
-          Container(
-            height: 50,
-            width: 100,
-            color: Colors.blue,
-            margin: EdgeInsets.fromLTRB(35, 10, 10, 10),
-            child: FlatButton(
-              onPressed: _onPressed,
-              child: Text('Sign In',style: TextStyle(color: Colors.white,),),
-            ),
-          ),
-        ],
-      ),
+        ),
+        Container(
+          margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+          child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 16,color: Colors.black),),
+        )
+      ],
     );
   }
 
@@ -205,10 +214,10 @@ class _LogInState extends State<LogIn>{
                     Positioned(
                       top: 30,
                       right: 30,
-                      left: 50,
+                      left: 30,
                       bottom: 500,
                       child: Container(
-                        child: Text('Field Staff Mobile Application',style: TextStyle(color: Colors.black,fontSize: 25),),
+                        child: Text('CCC Mobile App For Field Officer',style: TextStyle(color: Colors.black,fontSize: 22),),
                       ),
                     ),
                     Positioned(

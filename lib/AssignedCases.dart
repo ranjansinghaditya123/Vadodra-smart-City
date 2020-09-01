@@ -7,6 +7,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:geolocator/geolocator.dart';
 
+
 class Assigned extends StatefulWidget {
 
   @override
@@ -67,6 +68,7 @@ class _AssignedState extends State<Assigned> {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(

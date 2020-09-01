@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/Api.dart';
+import 'package:login_app/ForgetPassword.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:login_app/Dashboard.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 
 
@@ -138,7 +139,12 @@ class _LogInState extends State<LogIn>{
               Container(
                 margin: EdgeInsets.fromLTRB(10, 10, 35, 10),
                 child: FlatButton(
-                  onPressed: ()=> launch(''),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgetPassword()),
+                    );
+                  },
                   child: Text('Forget Password?',style: TextStyle(color: Colors.blue,),),
                 ),
               ),

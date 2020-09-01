@@ -5,12 +5,16 @@ import 'dart:convert';
 import 'package:login_app/LogIn.dart';
 import 'package:login_app/MyCases.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:intl/intl.dart';
 
 
 
 class Dashboard extends StatefulWidget {
 
   Dashboard({Key key, this.title}) :super(key: key);
+
+
+
 
   final String title;
 
@@ -22,6 +26,13 @@ class _DashboardState extends State<Dashboard> {
 
   String count = "";
   String count1 = "";
+
+  GetDateAndTime(){
+    var now = new DateTime.now();
+    print(new DateFormat("dd-MM-yyyy").format(now));
+    print(new DateFormat("H:m:s").format(now));
+    return now.toString();
+  }
 
   _save(String token) async {
     final prefs = await SharedPreferences.getInstance();
@@ -75,6 +86,7 @@ class _DashboardState extends State<Dashboard> {
     super.initState();
     _assignedcases();
     _Mycases();
+   GetDateAndTime();
   }
 
   Future<bool> _onWillPop() async {
@@ -120,26 +132,45 @@ class _DashboardState extends State<Dashboard> {
         child: Scaffold(
           appBar: AppBar(
             actions: <Widget>[
-              Expanded(child: FlatButton(child: Text('Home',style: TextStyle(color: Colors.white,fontSize: 25),),)),
-              Expanded(
-                child: FlatButton(
-                  onPressed: (){
-                    _save('N');
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (BuildContext context) =>  LogIn(
-                        ),
-                      ),
-                    );
-                  },
-                  child: Icon(Icons.cancel,color: Colors.red,size: 25,),),
-              ),
+              Expanded(child: FlatButton(child: Text('CCC Tickets Dashboard',style: TextStyle(color: Colors.white,fontSize: 25),),)),
             ],
           ),
           body: ListView(
             children: <Widget>[
               Column(
                 children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.fromLTRB(30,20,20,10),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          child: Text('User Name:',style: TextStyle(color: Colors.black,fontSize: 25)),
+                        ),
+                        Container(
+                          child: Text(' Aditya Ranjan Singh',style: TextStyle(color: Colors.green,fontSize: 20)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(30,0,20,10),
+                    child: Row(
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text('User Logged Since:',style: TextStyle(color: Colors.black,fontSize: 25)),
+                            ),
+                            Container(
+                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.green,fontSize: 20)),
+                            ),
+                          ],
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                        ),
+
+                      ],
+                    ),
+                  ),
                   Row(
                     children: <Widget>[
                       Expanded(
@@ -187,6 +218,26 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                     ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(20, 185,20,20),
+                    height: 50,
+                    width:double.infinity ,
+                    child: FlatButton(
+                      onPressed: (){
+                        _save('N');
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>  LogIn(
+                            ),
+                          ),
+                        );
+                      },
+                      color: Colors.redAccent,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(0))),
+                      child: Text('Log Out',style: TextStyle(color: Colors.white,fontSize: 20),),
+                    ),
                   ),
                 ],
               ),

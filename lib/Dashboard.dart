@@ -27,7 +27,8 @@ class _DashboardState extends State<Dashboard> {
   String count = "";
   String count1 = "";
 
-  GetDateAndTime(){
+  GetDateAndTime()
+  {
     var now = new DateTime.now();
     print(new DateFormat("dd-MM-yyyy").format(now));
     print(new DateFormat("H:m:s").format(now));
@@ -212,7 +213,7 @@ class _DashboardState extends State<Dashboard> {
                               children: <Widget>[
                                 Container(
                                   padding: EdgeInsets.all(10),
-                                  child: Text('Assigned Cases',style: TextStyle(color: Colors.white,fontSize: 20),),
+                                  child: Text('Assigned Tickets',style: TextStyle(color: Colors.white,fontSize: 20),),
                                 ),
                                 Container(
                                   padding: EdgeInsets.all(10),

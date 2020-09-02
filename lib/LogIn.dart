@@ -160,7 +160,7 @@ class _LogInState extends State<LogIn>{
         ),
         Container(
           margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
-          child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
+          child: Text('© VSCDL, Version 1.2, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
         )
       ],
     );

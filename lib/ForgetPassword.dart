@@ -38,7 +38,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(35, 280, 10, 10),
-                child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
+                child: Text('© VSCDL, Version 1.2, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
               )
             ],
           ),

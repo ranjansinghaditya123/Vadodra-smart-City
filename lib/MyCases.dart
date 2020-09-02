@@ -278,6 +278,9 @@ class _MyCasesState extends State<MyCases> {
   String priority = "";
   String date = "";
   String time = "";
+  String imgurl = "";
+  String chresby = "";
+
 
   List myCases = [];
 
@@ -303,6 +306,7 @@ class _MyCasesState extends State<MyCases> {
     var jsondata = json.decode(data.body);
     setState(() {
       myCases = jsondata;
+      imgurl = jsondata['imgurl'];
     });
   }
 
@@ -376,6 +380,24 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
+                                'Image',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              )),
+                          Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Image.network(imgurl),),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                              padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text(
                                 'Title',
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 20),
@@ -386,6 +408,28 @@ class _MyCasesState extends State<MyCases> {
                               width: 70,
                               child: Text(
                                 myCases[index]['title'],
+                                style: TextStyle(
+                                    color: Colors.green, fontSize: 16),
+                              )),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                              padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text(
+                                'Ticket Closed',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              )),
+                          Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(
+                                myCases[index]['chresby'],
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),

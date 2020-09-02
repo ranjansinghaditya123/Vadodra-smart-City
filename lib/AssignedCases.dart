@@ -29,6 +29,7 @@ class _AssignedState extends State<Assigned> {
    String priority = "";
    String date = "";
    String time = "";
+   String chimpby = "";
 
    List Assignedcases = [];
 
@@ -112,7 +113,7 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(20),
+                                padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
                                 child: Text(
@@ -148,6 +149,20 @@ class _AssignedState extends State<Assigned> {
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['title'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                          ],
+                        ),
+                        TableRow(
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text('Ticket Raised',style: TextStyle(color: Colors.black,fontSize: 20),),),
+                            Container(
+                                padding: EdgeInsets.all(10),
+                                height: 70,
+                                width: 70,
+                                child: Text(Assignedcases[index]['chimpby'],style: TextStyle(color: Colors.green,fontSize: 16),)),
                           ],
                         ),
                         TableRow(

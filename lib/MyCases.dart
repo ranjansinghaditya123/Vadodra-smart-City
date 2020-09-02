@@ -324,7 +324,7 @@ class _MyCasesState extends State<MyCases> {
           backgroundColor: Colors.blue,
           title: Center(
             child: Text(
-              'My Cases',
+              'Completed Tickets',
             ),
           ),
         ),

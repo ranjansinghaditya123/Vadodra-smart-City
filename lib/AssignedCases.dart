@@ -72,7 +72,7 @@ class _AssignedState extends State<Assigned> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: Center(child: Text('Assigned Cases')),
+            title: Center(child: Text('Assigned Tickets')),
           ),
           body: Container(
             margin: EdgeInsets.all(20),

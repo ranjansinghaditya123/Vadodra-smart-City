@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -306,7 +307,6 @@ class _MyCasesState extends State<MyCases> {
     var jsondata = json.decode(data.body);
     setState(() {
       myCases = jsondata;
-      imgurl = jsondata['imgurl'];
     });
   }
 
@@ -377,8 +377,8 @@ class _MyCasesState extends State<MyCases> {
                         children: <Widget>[
                           Container(
                               padding: EdgeInsets.all(20),
-                              height: 70,
-                              width: 70,
+                              height: 200,
+                              width: 200,
                               child: Text(
                                 'Image',
                                 style: TextStyle(
@@ -386,9 +386,9 @@ class _MyCasesState extends State<MyCases> {
                               )),
                           Container(
                               padding: EdgeInsets.all(10),
-                              height: 70,
-                              width: 70,
-                              child: Image.network(imgurl),),
+                              height: 200,
+                              width: 200,
+                              child: Image.network(myCases[index]['imgurl'],fit: BoxFit.fill,),),
                         ],
                       ),
                       TableRow(
@@ -416,7 +416,7 @@ class _MyCasesState extends State<MyCases> {
                       TableRow(
                         children: <Widget>[
                           Container(
-                              padding: EdgeInsets.all(20),
+                              padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
                               child: Text(

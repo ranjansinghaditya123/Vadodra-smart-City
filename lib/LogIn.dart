@@ -4,9 +4,6 @@ import 'package:login_app/ForgetPassword.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:login_app/Dashboard.dart';
 
-
-
-
 class LogIn extends StatefulWidget {
 
   LogIn({Key key , this.title}) : super(key : key);
@@ -137,7 +134,7 @@ class _LogInState extends State<LogIn>{
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.fromLTRB(10, 10, 35, 10),
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: FlatButton(
                   onPressed: (){
                     Navigator.push(
@@ -152,7 +149,7 @@ class _LogInState extends State<LogIn>{
                 height: 50,
                 width: 100,
                 color: Colors.blue,
-                margin: EdgeInsets.fromLTRB(35, 10, 10, 10),
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: FlatButton(
                   onPressed: _onPressed,
                   child: Text('Sign In',style: TextStyle(color: Colors.white,),),
@@ -163,7 +160,7 @@ class _LogInState extends State<LogIn>{
         ),
         Container(
           margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
-          child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 16,color: Colors.black),),
+          child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
         )
       ],
     );

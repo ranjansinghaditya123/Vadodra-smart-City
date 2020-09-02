@@ -14,7 +14,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title:Text('CCC Mobile App For Field Officer',style: TextStyle(color: Colors.white,fontSize: 22),),
+          title:Text('CCC Mobile App For Field Officer',style: TextStyle(color: Colors.white,fontSize: 18),),
         ),
         body: Container(
           margin: EdgeInsets.fromLTRB(25, 100, 15, 0),
@@ -23,22 +23,22 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.fromLTRB(0,0,0,10),
-                  child: Text('For any issue related to login issues,',style: TextStyle(color: Colors.black,fontSize: 25))),
+                  child: Text('For any issue related to login issues,',style: TextStyle(color: Colors.black,fontSize: 20))),
               Container(
-                  child: Text('please contact: CCC Supervisor :0265-XXXX',style: TextStyle(color: Colors.black,fontSize: 25))),
+                  child: Text('please contact: CCC Supervisor :0265-XXXX',style: TextStyle(color: Colors.black,fontSize: 20))),
               Container(
                 child: Row(
                   children: <Widget>[
-                    Text('Email :',style: TextStyle(color: Colors.black,fontSize: 25)),
+                    Text('Email:',style: TextStyle(color: Colors.black,fontSize: 20)),
                     FlatButton(
                       onPressed: () => launch('supervisor_ccc@vmc.gov.in'),
-                        child: Text(' supervisor_ccc@vmc.gov.in',style: TextStyle(color: Colors.green,fontSize: 20))),
+                        child: Text('supervisor_ccc@vmc.gov.in',style: TextStyle(color: Colors.green,fontSize: 16))),
                   ],
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(20, 250, 10, 10),
-                child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 16,color: Colors.black),),
+                margin: EdgeInsets.fromLTRB(35, 280, 10, 10),
+                child: Text('© VSCDL, Version X.Y, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
               )
             ],
           ),

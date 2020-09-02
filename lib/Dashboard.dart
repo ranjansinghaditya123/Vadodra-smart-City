@@ -143,12 +143,18 @@ class _DashboardState extends State<Dashboard> {
                     margin: EdgeInsets.fromLTRB(30,20,20,10),
                     child: Row(
                       children: <Widget>[
-                        Container(
-                          child: Text('User Name:',style: TextStyle(color: Colors.black,fontSize: 25)),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              child: Text('User Name:',style: TextStyle(color: Colors.black,fontSize: 20)),
+                            ),
+                            Container(
+                              child: Text(' Aditya Ranjan Singh',style: TextStyle(color: Colors.green,fontSize: 15)),
+                            ),
+                          ],
                         ),
-                        Container(
-                          child: Text(' Aditya Ranjan Singh',style: TextStyle(color: Colors.green,fontSize: 20)),
-                        ),
+
                       ],
                     ),
                   ),
@@ -159,10 +165,10 @@ class _DashboardState extends State<Dashboard> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text('User Logged Since:',style: TextStyle(color: Colors.black,fontSize: 25)),
+                              child: Text('User Logged Since:',style: TextStyle(color: Colors.black,fontSize: 20)),
                             ),
                             Container(
-                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.green,fontSize: 20)),
+                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.green,fontSize: 15)),
                             ),
                           ],
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,7 +190,7 @@ class _DashboardState extends State<Dashboard> {
                               children: <Widget>[
                                 Container(
                                   padding: EdgeInsets.all(10),
-                                  child: Text('My Cases',style: TextStyle(color: Colors.white,fontSize: 20),),
+                                  child: Text('Completed Tickets',style: TextStyle(color: Colors.white,fontSize: 20),),
                                 ),
                                 Container(
                                   padding: EdgeInsets.all(10),

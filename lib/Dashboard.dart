@@ -7,25 +7,22 @@ import 'package:login_app/MyCases.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 
-
-
 class Dashboard extends StatefulWidget {
 
   Dashboard({Key key, this.title}) :super(key: key);
-
-
-
 
   final String title;
 
   @override
   _DashboardState createState() => _DashboardState();
+
 }
 
 class _DashboardState extends State<Dashboard> {
 
   String count = "";
   String count1 = "";
+  String loggedInUser ="";
 
   GetDateAndTime()
   {
@@ -77,9 +74,12 @@ class _DashboardState extends State<Dashboard> {
 
     setState(() {
       count1 = jsondata["count"];
+      loggedInUser = jsondata["loggedInUser"];
+
     }
     );
   }
+
 
   @override
   void initState() {
@@ -151,7 +151,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Text('User Name:',style: TextStyle(color: Colors.black,fontSize: 20)),
                             ),
                             Container(
-                              child: Text(' Aditya Ranjan Singh',style: TextStyle(color: Colors.green,fontSize: 15)),
+                              child: Text(loggedInUser,style: TextStyle(color: Colors.green,fontSize: 15)),
                             ),
                           ],
                         ),

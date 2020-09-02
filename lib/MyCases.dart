@@ -514,7 +514,7 @@ class _MyCasesState extends State<MyCases> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(10),
                             height: 70,
                             width: 70,
                             child: Text(

@@ -133,7 +133,7 @@ class _DashboardState extends State<Dashboard> {
         child: Scaffold(
           appBar: AppBar(
             actions: <Widget>[
-              Expanded(child: FlatButton(child: Text('CCC Tickets Dashboard',style: TextStyle(color: Colors.white,fontSize: 25),),)),
+              Expanded(child: FlatButton(child: Text('CCC Tickets Dashboard',style: TextStyle(color: Colors.white,fontSize: 20),),)),
             ],
           ),
           body: ListView(
@@ -144,11 +144,11 @@ class _DashboardState extends State<Dashboard> {
                     margin: EdgeInsets.fromLTRB(30,20,20,10),
                     child: Row(
                       children: <Widget>[
-                        Column(
+                        Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Container(
-                              child: Text('User Name:',style: TextStyle(color: Colors.black,fontSize: 20)),
+                              child: Text('User Name: ',style: TextStyle(color: Colors.black,fontSize: 15)),
                             ),
                             Container(
                               child: Text(loggedInUser,style: TextStyle(color: Colors.green,fontSize: 15)),
@@ -163,10 +163,10 @@ class _DashboardState extends State<Dashboard> {
                     margin: EdgeInsets.fromLTRB(30,0,20,10),
                     child: Row(
                       children: <Widget>[
-                        Column(
+                        Row(
                           children: <Widget>[
                             Container(
-                              child: Text('User Logged Since:',style: TextStyle(color: Colors.black,fontSize: 20)),
+                              child: Text('User Logged Since: ',style: TextStyle(color: Colors.black,fontSize: 15)),
                             ),
                             Container(
                               child: Text(GetDateAndTime(),style: TextStyle(color: Colors.green,fontSize: 15)),
@@ -227,7 +227,7 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(20, 185,20,20),
+                    margin: EdgeInsets.fromLTRB(20, 250,20,20),
                     height: 50,
                     width:double.infinity ,
                     child: FlatButton(

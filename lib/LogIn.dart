@@ -111,6 +111,7 @@ class _LogInState extends State<LogIn>{
             ),
             margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
             child: TextFormField(
+              obscureText: true,
               controller: _passwordController,
               decoration: InputDecoration(
                 icon: Icon(Icons.lock),
@@ -159,7 +160,7 @@ class _LogInState extends State<LogIn>{
           ),
         ),
         Container(
-          margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+          margin: EdgeInsets.fromLTRB(10, 100, 10, 10),
           child: Text('© VSCDL, Version 1.2, August 2020',style: TextStyle(fontSize: 13,color: Colors.black),),
         )
       ],
@@ -217,7 +218,7 @@ class _LogInState extends State<LogIn>{
                     Positioned(
                       top: 30,
                       right: 30,
-                      left: 30,
+                      left: 50,
                       bottom: 500,
                       child: Container(
                         child: Text('CCC Mobile App For Field Officer',style: TextStyle(color: Colors.black,fontSize: 22),),
@@ -258,9 +259,9 @@ Container HeaderSection(){
           child: Text('Login Here',style: TextStyle(color: Colors.black,fontSize:30),),
         ),
         Container(
-          height: 100,
-          width: 100,
-          margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+          height: 120,
+          width: 120,
+          margin: EdgeInsets.fromLTRB(20, 0, 30, 20),
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
@@ -269,9 +270,6 @@ Container HeaderSection(){
             shape: BoxShape.circle,
           ),
         ),
-        Container(
-          margin: EdgeInsets.fromLTRB(20, 30, 20, 10),
-          child: Text('Sign in to start your session',style: TextStyle(color: Colors.grey,fontSize: 20),),),
       ],
     ),
   );

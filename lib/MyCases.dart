@@ -281,6 +281,9 @@ class _MyCasesState extends State<MyCases> {
   String time = "";
   String imgurl = "";
   String chresby = "";
+  String id = "";
+  String chimpby = "";
+
 
 
   List myCases = [];
@@ -373,24 +376,7 @@ class _MyCasesState extends State<MyCases> {
                     border: TableBorder.all(color: Colors.blue, width: 1.5),
                     defaultVerticalAlignment: TableCellVerticalAlignment.top,
                     children: <TableRow>[
-                      TableRow(
-                        children: <Widget>[
-                          Container(
-                              padding: EdgeInsets.all(20),
-                              height: 200,
-                              width: 200,
-                              child: Text(
-                                'Image',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
-                              )),
-                          Container(
-                              padding: EdgeInsets.all(10),
-                              height: 200,
-                              width: 200,
-                              child: Image.network(myCases[index]['imgurl'],fit: BoxFit.fill,),),
-                        ],
-                      ),
+
                       TableRow(
                         children: <Widget>[
                           Container(
@@ -398,7 +384,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                'Title',
+                                'Ticket Id',
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 20),
                               )),
@@ -407,7 +393,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['title'],
+                                myCases[index]['id'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -442,7 +428,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                'Description',
+                                'Date',
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 20),
                               )),
@@ -451,7 +437,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['desc'],
+                                myCases[index]['date'],
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -464,12 +450,56 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                'Type',
+                                'Time',
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 20),
                               )),
                           Container(
                               padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text(
+                                myCases[index]['time'],
+                                style: TextStyle(
+                                    color: Colors.green, fontSize: 16),
+                              )),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(
+                                'Ticket Raised',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              )),
+                          Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(
+                                myCases[index]['chimpby'],
+                                style: TextStyle(
+                                    color: Colors.green, fontSize: 16),
+                              )),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(
+                                'Ticket Type',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              )),
+                          Container(
+                              padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
                               child: Text(
@@ -504,55 +534,11 @@ class _MyCasesState extends State<MyCases> {
                       TableRow(
                         children: <Widget>[
                           Container(
-                              padding: EdgeInsets.all(10),
-                              height: 70,
-                              width: 70,
-                              child: Text(
-                                'Landmark',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
-                              )),
-                          Container(
-                              padding: EdgeInsets.all(10),
-                              height: 70,
-                              width: 70,
-                              child: Text(
-                                myCases[index]['landmark'],
-                                style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
-                              )),
-                        ],
-                      ),
-                      TableRow(
-                        children: <Widget>[
-                          Container(
-                              padding: EdgeInsets.all(10),
-                              height: 70,
-                              width: 70,
-                              child: Text(
-                                'Date',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
-                              )),
-                          Container(
-                              padding: EdgeInsets.all(10),
-                              height: 70,
-                              width: 70,
-                              child: Text(
-                                myCases[index]['date'],
-                                style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
-                              )),
-                        ],
-                      ),
-                      TableRow(
-                        children: <Widget>[
-                          Container(
                             padding: EdgeInsets.all(10),
                             height: 70,
                             width: 70,
                             child: Text(
-                              'Time',
+                              'Landmark',
                               style:
                                   TextStyle(color: Colors.black, fontSize: 20),
                             ),
@@ -562,11 +548,125 @@ class _MyCasesState extends State<MyCases> {
                             height: 70,
                             width: 70,
                             child: Text(
-                              myCases[index]['time'],
+                              myCases[index]['landmark'],
                               style:
                                   TextStyle(color: Colors.green, fontSize: 16),
                             ),
                           ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              'Title',
+                              style:
+                              TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              myCases[index]['title'],
+                              style:
+                              TextStyle(color: Colors.green, fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              'Description',
+                              style:
+                              TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              myCases[index]['desc'],
+                              style:
+                              TextStyle(color: Colors.green, fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              'Latitude',
+                              style:
+                              TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              myCases[index]['lati'],
+                              style:
+                              TextStyle(color: Colors.green, fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              'Longitude',
+                              style:
+                              TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 70,
+                            width: 70,
+                            child: Text(
+                              myCases[index]['longi'],
+                              style:
+                              TextStyle(color: Colors.green, fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Container(
+                              padding: EdgeInsets.all(20),
+                              height: 200,
+                              width: 200,
+                              child: Text(
+                                'Image',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              )),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            height: 200,
+                            width: 200,
+                            child: Image.network(myCases[index]['imgurl'],fit: BoxFit.fill,),),
                         ],
                       ),
                     ],

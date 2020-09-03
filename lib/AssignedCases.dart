@@ -30,6 +30,9 @@ class _AssignedState extends State<Assigned> {
    String date = "";
    String time = "";
    String chimpby = "";
+   String id = "";
+   String imgurl = "";
+   String chresby = "";
 
    List Assignedcases = [];
 
@@ -113,42 +116,15 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(10),
-                                height: 70,
-                                width: 70,
-                                child: Text(
-                                  'Upload Image',
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
-                                )),
-                            Container(
-                              margin: EdgeInsets.all(10),
-                              color: Colors.blue,
-                              child: FlatButton(
-                                onPressed: () {
-                                  Route route = MaterialPageRoute(builder:  (context)=> UserImageUpload());
-                                  Navigator.pushReplacement(context, route);
-                                },
-                                child: Text(
-                                  'Upload Image',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        TableRow(
-                          children: <Widget>[
-                            Container(
                                 padding: EdgeInsets.all(20),
                                 height: 70,
                                 width: 70,
-                                child: Text('Title',style: TextStyle(color: Colors.black,fontSize: 20),)),
+                                child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['title'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.green,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -171,12 +147,12 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(20),
                                 height: 70,
                                 width: 70,
-                                child: Text('Description',style: TextStyle(color: Colors.black,fontSize: 20),),),
+                                child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['desc'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['date'],style: TextStyle(color: Colors.green,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -185,7 +161,21 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(20),
                                 height: 70,
                                 width: 70,
-                                child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 20),)),
+                                child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 20),)),
+                            Container(
+                                padding: EdgeInsets.all(10),
+                                height: 70,
+                                width: 70,
+                                child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                          ],
+                        ),
+                        TableRow(
+                          children: <Widget>[
+                            Container(
+                                padding: EdgeInsets.all(20),
+                                height: 70,
+                                width: 70,
+                                child: Text('Ticket Type',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
                                 padding: EdgeInsets.all(10),
                                 height: 70,
@@ -224,15 +214,15 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(20),
-                                height: 70,
-                                width: 70,
-                                child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 20),)),
+                              padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text('Title',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
-                                padding: EdgeInsets.all(10),
-                                height: 70,
-                                width: 70,
-                                child: Text(Assignedcases[index]['date'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(Assignedcases[index]['title'],style: TextStyle(color: Colors.green,fontSize: 16),),),
                           ],
                         ),
                         TableRow(
@@ -241,12 +231,85 @@ class _AssignedState extends State<Assigned> {
                               padding: EdgeInsets.all(20),
                               height: 70,
                               width: 70,
-                              child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 20),),),
+                              child: Text('Description',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
                               padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
-                              child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                              child: Text(Assignedcases[index]['desc'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                          ],
+                        ),
+                        TableRow(
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text('Latitude',style: TextStyle(color: Colors.black,fontSize: 20),),),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(Assignedcases[index]['lati'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                          ],
+                        ),
+                        TableRow(
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.all(20),
+                              height: 70,
+                              width: 70,
+                              child: Text('Longitude',style: TextStyle(color: Colors.black,fontSize: 20),),),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              height: 70,
+                              width: 70,
+                              child: Text(Assignedcases[index]['longi'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                          ],
+                        ),
+                        TableRow(
+                          children: <Widget>[
+                            Container(
+                                padding: EdgeInsets.all(20),
+                                height: 200,
+                                width: 200,
+                                child: Text(
+                                  'Image',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 20),
+                                )),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              height: 200,
+                              width: 200,
+                              child: Image.network(Assignedcases[index]['imgurl'],fit: BoxFit.fill,),),
+                          ],
+                        ),
+                        TableRow(
+                          children: <Widget>[
+                            Container(
+                                padding: EdgeInsets.all(10),
+                                height: 70,
+                                width: 70,
+                                child: Text(
+                                  'Upload Image',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 20),
+                                )),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              color: Colors.blue,
+                              child: FlatButton(
+                                onPressed: () {
+                                  Route route = MaterialPageRoute(builder:  (context)=> UserImageUpload());
+                                  Navigator.pushReplacement(context, route);
+                                },
+                                child: Text(
+                                  'Upload Image',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ],

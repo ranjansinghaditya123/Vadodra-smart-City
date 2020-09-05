@@ -5,268 +5,24 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:login_app/MycasesSmall.dart';
 
-
-//class MyCases extends StatefulWidget {
-//
-//  @override
-//  _MyCasesState createState() => _MyCasesState();
-//
-//}
-//
-//class _MyCasesState extends State<MyCases> {
-//
-//  SharedPreferences sharedPreferences;
-//
-//  String title = "";
-//  String desc = "";
-//  String type = "";
-//  String landmark = "";
-//  String lati = "";
-//  String longi = "";
-//  String priority = "";
-//  String date = "";
-//  String time = "";
-//
-//
-//  List myCases = [];
-//
-//  _my () async {
-//
-//    final prefs = await SharedPreferences.getInstance();
-//    final username = await prefs.getString('userID');
-//    final password = await prefs.getString('password');
-//
-//    print('Printing.....');
-//    final header = {'Accept':'application/json', "Content-Type" : "application/json"};
-//    final body =  {
-//      "UID": username,
-//      "PASS" : password,
-//
-//    };
-//    var data =  await http.post("http://117.197.122.139:3000/getOpenEventDetails", headers: header, body: json.encode(body));
-//    var jsondata = json.decode(data.body);
-//    setState(() {
-//      myCases = jsondata;
-//    }
-//    );
-//  }
-//  @override
-//  void initState() {
-//    // TODO: implement initState
-//    super.initState();
-//    _my();
-//  }
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//        appBar: AppBar(
-//          title: Center(child: Text('My Cases'),),
-//        ),
-//        body: Container(
-//          child: ListView.builder(
-//            itemCount: myCases.length,
-//            itemBuilder: (BuildContext context , int index){
-//              return Container(
-//                height: 600,
-//                width: 400,
-//                child: Column(
-//                  children: <Widget>[
-//                    SizedBox(
-//                      height: 10,
-//                      width: double.infinity,
-//                      child: Container(
-//                        color: Colors.black,
-//                      ),
-//                    ),
-//                    Container(
-//                      height: 110,
-//                      width: double.infinity,
-//                      margin: EdgeInsets.all(10),
-//                      decoration: BoxDecoration(
-//                        border: Border.all(
-//                          width: 1,
-//                          color: Colors.blue,
-//                        ),
-//                      ),
-//                      child: ListView(
-//                        scrollDirection: Axis.horizontal,
-//                        children: <Widget>[
-//                          Row(children: <Widget>[
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-//                                    child: Text('Title',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text(myCases[index]['title'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                            SizedBox(
-//                              height: 0,
-//                              width: 100,
-//                            ),
-//                            FlatButton(
-//                              onPressed: (){
-//                                Navigator.push(
-//                                  context,
-//                                  MaterialPageRoute(builder: (context) => UserImageUpload()),
-//                                );
-//                              },
-//                              child: Icon(Icons.file_upload,color: Colors.black,size: 40,),),
-//                          ],),
-//                        ],
-//                      ),
-//                    ),
-//                    Container(
-//                      height: 110,
-//                      width: double.infinity,
-//                      margin: EdgeInsets.all(10),
-//                      decoration: BoxDecoration(
-//                        border: Border.all(
-//                          width: 1,
-//                          color: Colors.blue,
-//                        ),
-//                      ),
-//                      child: ListView(
-//                        scrollDirection: Axis.horizontal,
-//                        children: <Widget>[
-//                          Row(children: <Widget>[
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text('Description',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-//                                    child: Text(myCases[index]['desc'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text('Landmark',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(0, 0, 10, 10),
-//                                    child: Text(myCases[index]['landmark'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                          ],),
-//                        ],
-//                      ),
-//                    ),
-//                    Container(
-//                      height: 110,
-//                      width: double.infinity,
-//                      margin: EdgeInsets.all(10),
-//                      decoration: BoxDecoration(
-//                        border: Border.all(
-//                          width: 1,
-//                          color: Colors.blue,
-//                        ),
-//                      ),
-//                      child: ListView(
-//                        scrollDirection: Axis.horizontal,
-//                        children: <Widget>[
-//                          Row(children: <Widget>[
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-//                                    child: Text(myCases[index]['type'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                            SizedBox(
-//                              height: 0,
-//                              width: 30,
-//                            ),
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-//                                    child: Text(myCases[index]['date'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                          ],),
-//                        ],
-//                      ),
-//                    ),
-//                    Container(
-//                      height: 110,
-//                      width: double.infinity,
-//                      margin: EdgeInsets.all(10),
-//                      decoration: BoxDecoration(
-//                        border: Border.all(
-//                          width: 1,
-//                          color: Colors.blue,
-//                        ),
-//                      ),
-//                      child: ListView(
-//                        scrollDirection: Axis.horizontal,
-//                        children: <Widget>[
-//                          Row(children: <Widget>[
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-//                                    child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                            SizedBox(
-//                              height: 0,
-//                              width: 150,
-//                            ),
-//                            Container(
-//                              margin: EdgeInsets.all(10),
-//                              child: Column(children: <Widget>[
-//                                Container(
-//                                    margin: EdgeInsets.all(10),
-//                                    child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 25),)),
-//                                Container(
-//                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-//                                    child: Text(myCases[index]['time'],style: TextStyle(color: Colors.green,fontSize: 16),))
-//                              ],),
-//                            ),
-//                          ],),
-//                        ],
-//                      ),
-//                    ),
-//                  ],
-//                ),
-//              )  ;
-//            },
-//          ),
-//        )
-//    );
-//  }
-//}
 
 class MyCases extends StatefulWidget {
 
+  final Event event ;
+  MyCases({Key key, this.event}) : super(key: key);
+
   @override
-  _MyCasesState createState() => _MyCasesState();
+  _MyCasesState createState() => _MyCasesState(event);
 
 }
 
 class _MyCasesState extends State<MyCases> {
+
+
+  final Event event ;
+  _MyCasesState(this.event);
 
   SharedPreferences sharedPreferences;
 
@@ -288,6 +44,7 @@ class _MyCasesState extends State<MyCases> {
 
   List myCases = [];
 
+
   _my() async {
 
     final prefs = await SharedPreferences.getInstance();
@@ -300,11 +57,12 @@ class _MyCasesState extends State<MyCases> {
 
     };
     final body = {
-      "UID": username,
-      "PASS": password,
+
+      "EVENTID":'${event.eventid}',
+
     };
     var data = await http.post(
-        "http://117.197.122.139:3000/getPastEventDetails",
+        "http://117.197.122.139:3000/getEventDetailsByID",
         headers: header,
         body: json.encode(body));
     var jsondata = json.decode(data.body);
@@ -415,7 +173,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['chresby'],
+                                myCases[index]['chresby'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -437,7 +195,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['date'],
+                                myCases[index]['date'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -459,7 +217,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['time'],
+                                myCases[index]['time'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -481,7 +239,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['chimpby'],
+                                myCases[index]['chimpby'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -503,7 +261,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['type'],
+                                myCases[index]['type'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -525,7 +283,7 @@ class _MyCasesState extends State<MyCases> {
                               height: 70,
                               width: 70,
                               child: Text(
-                                myCases[index]['priority'],
+                                myCases[index]['priority'].toString(),
                                 style: TextStyle(
                                     color: Colors.green, fontSize: 16),
                               )),
@@ -548,7 +306,7 @@ class _MyCasesState extends State<MyCases> {
                             height: 70,
                             width: 70,
                             child: Text(
-                              myCases[index]['landmark'],
+                              myCases[index]['landmark'].toString(),
                               style:
                                   TextStyle(color: Colors.green, fontSize: 16),
                             ),
@@ -572,7 +330,7 @@ class _MyCasesState extends State<MyCases> {
                             height: 70,
                             width: 70,
                             child: Text(
-                              myCases[index]['title'],
+                              myCases[index]['title'].toString(),
                               style:
                               TextStyle(color: Colors.green, fontSize: 16),
                             ),
@@ -596,7 +354,7 @@ class _MyCasesState extends State<MyCases> {
                             height: 70,
                             width: 70,
                             child: Text(
-                              myCases[index]['desc'],
+                              myCases[index]['desc'].toString(),
                               style:
                               TextStyle(color: Colors.green, fontSize: 16),
                             ),
@@ -620,7 +378,7 @@ class _MyCasesState extends State<MyCases> {
                             height: 70,
                             width: 70,
                             child: Text(
-                              myCases[index]['lati'],
+                              myCases[index]['lati'].toString(),
                               style:
                               TextStyle(color: Colors.green, fontSize: 16),
                             ),
@@ -644,7 +402,7 @@ class _MyCasesState extends State<MyCases> {
                             height: 70,
                             width: 70,
                             child: Text(
-                              myCases[index]['longi'],
+                              myCases[index]['longi'].toString(),
                               style:
                               TextStyle(color: Colors.green, fontSize: 16),
                             ),

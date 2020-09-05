@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:login_app/AssignedCasesSmall.dart';
 import 'package:login_app/Dashboard.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,16 +11,21 @@ import 'package:geolocator/geolocator.dart';
 
 class Assigned extends StatefulWidget {
 
+  final Event event ;
+   Assigned({Key key, this.event}) : super(key: key);
+
   @override
 
-  _AssignedState createState() => _AssignedState();
+  _AssignedState createState() => _AssignedState(event);
 
 }
 
 class _AssignedState extends State<Assigned> {
 
-  SharedPreferences sharedPreferences;
+  final Event event ;
+  _AssignedState(this.event);
 
+  SharedPreferences sharedPreferences;
    String title = "";
    String desc = "";
    String type = "";
@@ -33,8 +39,10 @@ class _AssignedState extends State<Assigned> {
    String id = "";
    String imgurl = "";
    String chresby = "";
+   String count = "";
 
    List Assignedcases = [];
+
 
   _assigned () async {
 
@@ -46,11 +54,11 @@ class _AssignedState extends State<Assigned> {
 
     final body =  {
 
-      "UID": username,
-     "PASS" : password,
+      "EVENTID":'${event.eventid}',
+
 
     };
-   var data =  await http.post("http://117.197.122.139:3000/getOpenEventDetails", headers: header, body: json.encode(body));
+   var data =  await http.post("http://117.197.122.139:3000/getEventDetailsByID", headers: header, body: json.encode(body));
     var jsondata = json.decode(data.body);
 
     print('Printing...');
@@ -76,7 +84,7 @@ class _AssignedState extends State<Assigned> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: Center(child: Text('Assigned Tickets')),
+            title: Container(child: Text('Assigned Tickets')),
           ),
           body: Container(
             margin: EdgeInsets.all(20),

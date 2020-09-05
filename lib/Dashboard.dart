@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:login_app/AssignedCases.dart';
 import 'dart:convert';
 import 'package:login_app/LogIn.dart';
-import 'package:login_app/MyCases.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
+import 'AssignedCasesSmall.dart';
+import 'MycasesSmall.dart';
+
 
 class Dashboard extends StatefulWidget {
 
@@ -40,6 +41,8 @@ class _DashboardState extends State<Dashboard> {
 
   }
 
+  // Mycases(assignedcases)
+
   _assignedcases () async {
     final prefs = await SharedPreferences.getInstance();
     final username = await prefs.getString('userID');
@@ -56,9 +59,13 @@ class _DashboardState extends State<Dashboard> {
     var jsondata = json.decode(data.body);
     setState(() {
       count = jsondata["count"];
+      print('A'+count);
     }
     );
   }
+
+  // Assigned Cases(Mycases)
+
   _Mycases () async {
     final prefs = await SharedPreferences.getInstance();
     final username = await prefs.getString('userID');
@@ -74,6 +81,7 @@ class _DashboardState extends State<Dashboard> {
 
     setState(() {
       count1 = jsondata["count"];
+      print('my'+count1);
       loggedInUser = jsondata["loggedInUser"];
 
     }
@@ -112,13 +120,13 @@ class _DashboardState extends State<Dashboard> {
 
 
   movetoMyCasesPage()async{
-   final response=  await Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>  MyCases(),));
+   final response=  await Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>  Casessmall(),));
    _Mycases();
 
   }
 
   movetoAssignedCases()async{
-    final response = await Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>  Assigned(),));
+    final response = await Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>Assignedsmall(),));
     _assignedcases();
   }
 

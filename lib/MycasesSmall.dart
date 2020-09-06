@@ -102,7 +102,7 @@ class _CasessmallState extends State<Casessmall> {
                     width: double.infinity,
                   ),
                   Table(
-                    border: TableBorder.all(color: Colors.blue,width: 1.5),
+                    border: TableBorder.all(color: Colors.black,width: 1.5),
                     defaultVerticalAlignment: TableCellVerticalAlignment.top,
                     children: <TableRow>[
                       TableRow(
@@ -118,7 +118,7 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(5),
                                 height: 70,
                                 width: 70,
-                                child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.green,fontSize: 12),),),
+                                child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
                             ],
                           ),
                           Column(
@@ -132,7 +132,7 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(myCases[index]['date'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(myCases[index]['date'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(
@@ -146,7 +146,7 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(myCases[index]['time'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(myCases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(
@@ -160,7 +160,7 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(myCases[index]['type'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(myCases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(
@@ -174,7 +174,7 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(

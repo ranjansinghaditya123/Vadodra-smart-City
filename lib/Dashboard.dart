@@ -159,7 +159,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Text('User Name: ',style: TextStyle(color: Colors.black,fontSize: 15)),
                             ),
                             Container(
-                              child: Text(loggedInUser,style: TextStyle(color: Colors.green,fontSize: 12)),
+                              child: Text(loggedInUser,style: TextStyle(color: Colors.blue,fontSize: 12)),
                             ),
                           ],
                         ),
@@ -177,7 +177,7 @@ class _DashboardState extends State<Dashboard> {
                               child: Text('User Logged Since: ',style: TextStyle(color: Colors.black,fontSize: 15)),
                             ),
                             Container(
-                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.green,fontSize: 12)),
+                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.blue,fontSize: 12)),
                             ),
                           ],
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -235,7 +235,7 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(20, 270,20,20),
+                    margin: EdgeInsets.fromLTRB(20, 250,20,20),
                     height: 50,
                     width:double.infinity ,
                     child: FlatButton(

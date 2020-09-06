@@ -105,33 +105,8 @@ class _MyCasesState extends State<MyCases> {
                     height: 50,
                     width: double.infinity,
                   ),
-//                  Row(
-//                    children: <Widget>[
-//                      SizedBox(
-//                        height: 0,
-//                        width: 220,
-//                      ),
-//                      Container(
-//                        margin: EdgeInsets.all(10),
-//                        color: Colors.blue,
-//                        child: FlatButton(
-//                          onPressed: () {
-//                            Navigator.push(
-//                              context,
-//                              MaterialPageRoute(
-//                                  builder: (context) => UserImageUpload()),
-//                            );
-//                          },
-//                          child: Text(
-//                            'Upload Image',
-//                            style: TextStyle(color: Colors.white),
-//                          ),
-//                        ),
-//                      ),
-//                    ],
-//                  ),
                   Table(
-                    border: TableBorder.all(color: Colors.blue, width: 1.5),
+                    border: TableBorder.all(color: Colors.black, width: 1.5),
                     defaultVerticalAlignment: TableCellVerticalAlignment.top,
                     children: <TableRow>[
 
@@ -153,7 +128,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['id'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -175,7 +150,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['chresby'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -197,7 +172,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['date'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -219,7 +194,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['time'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -241,7 +216,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['chimpby'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -263,7 +238,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['type'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -285,7 +260,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['priority'].toString(),
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 16),
+                                    color: Colors.blue, fontSize: 16),
                               )),
                         ],
                       ),
@@ -308,7 +283,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['landmark'].toString(),
                               style:
-                                  TextStyle(color: Colors.green, fontSize: 16),
+                                  TextStyle(color: Colors.blue, fontSize: 16),
                             ),
                           ),
                         ],
@@ -332,7 +307,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['title'].toString(),
                               style:
-                              TextStyle(color: Colors.green, fontSize: 16),
+                              TextStyle(color: Colors.blue, fontSize: 16),
                             ),
                           ),
                         ],
@@ -356,7 +331,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['desc'].toString(),
                               style:
-                              TextStyle(color: Colors.green, fontSize: 16),
+                              TextStyle(color: Colors.blue, fontSize: 16),
                             ),
                           ),
                         ],
@@ -380,7 +355,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['lati'].toString(),
                               style:
-                              TextStyle(color: Colors.green, fontSize: 16),
+                              TextStyle(color: Colors.blue, fontSize: 16),
                             ),
                           ),
                         ],
@@ -404,7 +379,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['longi'].toString(),
                               style:
-                              TextStyle(color: Colors.green, fontSize: 16),
+                              TextStyle(color: Colors.blue, fontSize: 16),
                             ),
                           ),
                         ],

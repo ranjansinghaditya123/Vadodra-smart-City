@@ -118,7 +118,7 @@ class _AssignedState extends State<Assigned> {
 //                      ],
 //                    ),
                     Table(
-                      border: TableBorder.all(color: Colors.blue,width: 1.5),
+                      border: TableBorder.all(color: Colors.black,width: 1.5),
                       defaultVerticalAlignment: TableCellVerticalAlignment.top,
                       children: <TableRow>[
                         TableRow(
@@ -132,7 +132,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -146,7 +146,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['chimpby'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['chimpby'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -160,7 +160,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['date'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['date'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -174,7 +174,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -188,7 +188,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -202,7 +202,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -216,7 +216,7 @@ class _AssignedState extends State<Assigned> {
                                 padding: EdgeInsets.all(10),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['landmark'],style: TextStyle(color: Colors.green,fontSize: 16),)),
+                                child: Text(Assignedcases[index]['landmark'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
                           ],
                         ),
                         TableRow(
@@ -230,7 +230,7 @@ class _AssignedState extends State<Assigned> {
                               padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
-                              child: Text(Assignedcases[index]['title'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                              child: Text(Assignedcases[index]['title'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
                           ],
                         ),
                         TableRow(
@@ -244,7 +244,7 @@ class _AssignedState extends State<Assigned> {
                               padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
-                              child: Text(Assignedcases[index]['desc'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                              child: Text(Assignedcases[index]['desc'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
                           ],
                         ),
                         TableRow(
@@ -258,7 +258,7 @@ class _AssignedState extends State<Assigned> {
                               padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
-                              child: Text(Assignedcases[index]['lati'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                              child: Text(Assignedcases[index]['lati'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
                           ],
                         ),
                         TableRow(
@@ -272,7 +272,7 @@ class _AssignedState extends State<Assigned> {
                               padding: EdgeInsets.all(10),
                               height: 70,
                               width: 70,
-                              child: Text(Assignedcases[index]['longi'],style: TextStyle(color: Colors.green,fontSize: 16),),),
+                              child: Text(Assignedcases[index]['longi'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
                           ],
                         ),
                         TableRow(

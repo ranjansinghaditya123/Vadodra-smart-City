@@ -113,7 +113,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                     width: double.infinity,
                   ),
                   Table(
-                    border: TableBorder.all(color: Colors.blue,width: 1.5),
+                    border: TableBorder.all(color: Colors.black,width: 1.5),
                     defaultVerticalAlignment: TableCellVerticalAlignment.top,
                     children: <TableRow>[
                       TableRow(
@@ -129,7 +129,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.green,fontSize: 12),),),
+                                child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
                             ],
                           ),
                           Column(
@@ -143,7 +143,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['date'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(Assignedcases[index]['date'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(
@@ -157,7 +157,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(
@@ -171,7 +171,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(
@@ -185,7 +185,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.green,fontSize: 12),),)
+                                child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(

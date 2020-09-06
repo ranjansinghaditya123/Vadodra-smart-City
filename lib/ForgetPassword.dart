@@ -32,7 +32,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     Text('Email:',style: TextStyle(color: Colors.black,fontSize: 20)),
                     FlatButton(
                       onPressed: () => launch('supervisor_ccc@vmc.gov.in'),
-                        child: Text('supervisor_ccc@vmc.gov.in',style: TextStyle(color: Colors.green,fontSize: 16))),
+                        child: Text('supervisor_ccc@vmc.gov.in',style: TextStyle(color: Colors.blue,fontSize: 16))),
                   ],
                 ),
               ),

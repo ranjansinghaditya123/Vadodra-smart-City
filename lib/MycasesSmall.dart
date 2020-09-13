@@ -25,11 +25,12 @@ class _CasessmallState extends State<Casessmall> {
   String lati = "";
   String longi = "";
   String priority = "";
-  String date = "";
+  String closedtime = "";
   String time = "";
   String chimpby = "";
   String id = "";
-  String imgurl = "";
+  String iocimgurl = "";
+  String appimgurl = "";
   String chresby = "";
 
   List myCases = [];
@@ -127,12 +128,12 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                child: Text('Closed Time',style: TextStyle(color: Colors.black,fontSize: 14),),),
                               Container(
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text(myCases[index]['date'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                child: Text(myCases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
                             ],
                           ),
                           Column(

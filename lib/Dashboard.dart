@@ -28,9 +28,11 @@ class _DashboardState extends State<Dashboard> {
   GetDateAndTime()
   {
     var now = new DateTime.now();
+    var coverteddate = new DateFormat("dd-MM-yyyy").format(now);
+    var convertedtime = new DateFormat("H:m ").format(now);
     print(new DateFormat("dd-MM-yyyy").format(now));
     print(new DateFormat("H:m:s").format(now));
-    return now.toString();
+    return convertedtime+coverteddate.toString();
   }
 
   _save(String token) async {

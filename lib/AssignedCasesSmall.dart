@@ -1,12 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AssignedCases.dart';
-import 'Dashboard.dart';
-
-
 
 class Assignedsmall extends StatefulWidget {
 
@@ -35,6 +31,35 @@ class _AssignedsmallState extends State<Assignedsmall> {
   String appimgurl = "";
   String chresby = "";
   List Assignedcases = [];
+
+
+  List<ListType> _dropdownTypeItems = [
+    ListType("DATE-DSC", "Oldest"),
+    ListType("DATE-ASC", "Newest"),
+    ListType("ID-ASC", "Id-Ascending"),
+    ListType("ID-DESc", "Id-Descending"),
+  ];
+
+  List<DropdownMenuItem<ListType>> _dropdownMenuItems;
+  ListType _selectedItem;
+
+  List<DropdownMenuItem<ListType>> buildDropDownMenuItems(List listItems) {
+    List<DropdownMenuItem<ListType>> items = List();
+    for (ListType listItem in listItems) {
+      items.add(
+        DropdownMenuItem(
+          child: Text(listItem.name),
+          value: listItem,
+        ),
+      );
+    }
+    return items;
+  }
+
+
+
+
+
 
 
 
@@ -69,6 +94,34 @@ class _AssignedsmallState extends State<Assignedsmall> {
 
 
 
+ _sorting()async{
+   final prefs = await SharedPreferences.getInstance();
+   final username = await prefs.getString('userID');
+
+   final header = {'Accept':'application/json', "Content-Type" : "application/json"};
+
+   final body =  {
+
+     "UID": username,
+      "TYPE" : _selectedItem,
+
+
+   };
+   var data =  await http.post("http://117.197.122.139:3000/getOpenEventDetailsAfterSorting", headers: header, body: json.encode(body));
+   var jsondata = json.decode(data.body);
+
+   print('Printing...');
+
+   print(jsondata);
+
+   setState((){
+
+     Assignedcases = jsondata;
+
+   }
+   );
+ }
+
 
 
   @override
@@ -76,6 +129,8 @@ class _AssignedsmallState extends State<Assignedsmall> {
     // TODO: implement initState
     super.initState();
     _assigned();
+    _dropdownMenuItems = buildDropDownMenuItems(_dropdownTypeItems);
+    _selectedItem = _dropdownMenuItems[0].value;
   }
 
   @override
@@ -84,10 +139,39 @@ class _AssignedsmallState extends State<Assignedsmall> {
 
 
 
+
+
+
+
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('Assigned Tickets')),
+          actions: <Widget>[
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 0, 0,0),
+              child: Container(
+                  child: DropdownButton<ListType>(
+                    focusColor: Colors.white,
+                    value: _selectedItem,
+                    items: _dropdownMenuItems,
+                    onChanged: (value){
+                      setState(() {
+                        _selectedItem = value;
+                      });
+                    },
+                  )
+              ),
+            ),
+            Container(
+              child: FlatButton(
+                onPressed: _sorting,
+                child: Icon(
+                  Icons.sort,color: Colors.white,
+                ),
+              ),
+            )
+          ],
         ),
         body: Container(
           margin: EdgeInsets.all(20),
@@ -108,6 +192,13 @@ class _AssignedsmallState extends State<Assignedsmall> {
 
               return Column(
                 children: <Widget>[
+                  Container(
+                    child: Container(
+                      child: FlatButton(
+                        child: Center(child: Text('Assigned Tickets',style: TextStyle(color: Colors.black,fontSize: 15),)),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 50,
                     width: double.infinity,
@@ -138,7 +229,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text('Closed Time',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
                               Container(
                                 padding: EdgeInsets.all(3),
                                 height: 70,
@@ -230,4 +321,11 @@ class Event{
   final String eventid ;
   Event(this.eventid);
 
+}
+
+class ListType {
+  String value;
+  String name;
+
+  ListType(this.value, this.name);
 }

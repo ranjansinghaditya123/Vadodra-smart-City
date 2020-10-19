@@ -35,6 +35,59 @@ class _CasessmallState extends State<Casessmall> {
 
   List myCases = [];
 
+
+  List<ListType> _dropdownTypeItems = [
+    ListType("DATE-DSC", "Oldest"),
+    ListType("DATE-ASC", "Newest"),
+    ListType("ID-ASC", "Id-Ascending"),
+    ListType("ID-DESc", "Id-Descending"),
+  ];
+
+  List<DropdownMenuItem<ListType>> _dropdownMenuItems;
+  ListType _selectedItem;
+
+  List<DropdownMenuItem<ListType>> buildDropDownMenuItems(List listItems) {
+    List<DropdownMenuItem<ListType>> items = List();
+    for (ListType listItem in listItems) {
+      items.add(
+        DropdownMenuItem(
+          child: Text(listItem.name),
+          value: listItem,
+        ),
+      );
+    }
+    return items;
+  }
+
+  _sorting()async{
+    final prefs = await SharedPreferences.getInstance();
+    final username = await prefs.getString('userID');
+
+    final header = {'Accept':'application/json', "Content-Type" : "application/json"};
+
+    final body =  {
+
+      "UID": username,
+      "TYPE" : _selectedItem,
+
+
+    };
+    var data =  await http.post("http://117.197.122.139:3000/getPastEventDetailsAfterSorting", headers: header, body: json.encode(body));
+    var jsondata = json.decode(data.body);
+
+    print('Printing...');
+
+    print(jsondata);
+
+    setState((){
+
+      myCases = jsondata;
+
+    }
+    );
+  }
+
+
   _my () async {
 
     final prefs = await SharedPreferences.getInstance();
@@ -69,6 +122,8 @@ class _CasessmallState extends State<Casessmall> {
     // TODO: implement initState
     super.initState();
     _my();
+    _dropdownMenuItems = buildDropDownMenuItems(_dropdownTypeItems);
+    _selectedItem = _dropdownMenuItems[0].value;
   }
 
   @override
@@ -76,8 +131,32 @@ class _CasessmallState extends State<Casessmall> {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text('Completed Tickets')),
+        appBar:AppBar(
+          actions: <Widget>[
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 0, 0,0),
+              child: Container(
+                  child: DropdownButton<ListType>(
+                    focusColor: Colors.white,
+                    value: _selectedItem,
+                    items: _dropdownMenuItems,
+                    onChanged: (value){
+                      setState(() {
+                        _selectedItem = value;
+                      });
+                    },
+                  )
+              ),
+            ),
+            Container(
+              child: FlatButton(
+                onPressed: _sorting,
+                child: Icon(
+                  Icons.sort,color: Colors.white,
+                ),
+              ),
+            )
+          ],
         ),
         body: Container(
           margin: EdgeInsets.all(20),
@@ -98,6 +177,13 @@ class _CasessmallState extends State<Casessmall> {
 
               return Column(
                 children: <Widget>[
+                  Container(
+                    child: Container(
+                      child: FlatButton(
+                        child: Center(child: Text('Completed Tickets',style: TextStyle(color: Colors.black,fontSize: 15),)),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 50,
                     width: double.infinity,
@@ -128,7 +214,7 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(3),
                                 height: 70,
                                 width: 70,
-                                child: Text('Closed Time',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
                               Container(
                                 padding: EdgeInsets.all(3),
                                 height: 70,
@@ -219,4 +305,11 @@ class Event{
   final String eventid ;
   Event(this.eventid);
 
+}
+
+class ListType {
+  String value;
+  String name;
+
+  ListType(this.value, this.name);
 }

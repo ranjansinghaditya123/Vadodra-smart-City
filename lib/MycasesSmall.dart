@@ -158,142 +158,189 @@ class _CasessmallState extends State<Casessmall> {
             )
           ],
         ),
-        body: Container(
-          margin: EdgeInsets.all(20),
-          child: ListView.builder(
-            itemCount: myCases.length,
-            itemBuilder: (BuildContext context , int index){
-
-              _navigateHome(BuildContext context) async {
-                Event event =  Event(myCases[index]['id'].toString());
-                final result = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>MyCases(
-                          event: event,
-                        )));
-                print(result);
-              }
-
-              return Column(
-                children: <Widget>[
-                  Container(
-                    child: Container(
-                      child: FlatButton(
-                        child: Center(child: Text('Completed Tickets',style: TextStyle(color: Colors.black,fontSize: 15),)),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: double.infinity,
-                  ),
-                  Table(
-                    border: TableBorder.all(color: Colors.black,width: 1.5),
-                    defaultVerticalAlignment: TableCellVerticalAlignment.top,
-                    children: <TableRow>[
-                      TableRow(
+        body: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: Center(child: Text('Completed Tickets',style: TextStyle(fontSize: 15),)),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(5,25,5,0),
+              height: 35,
+              width: double.infinity,
+              child: Table(
+                border: TableBorder.all(color: Colors.black,width: 1.5),
+                defaultVerticalAlignment: TableCellVerticalAlignment.top,
+                children:<TableRow>[
+                  TableRow(
+                    children: <Widget>[
+                      Column(
                         children: <Widget>[
-                          Column(
+                          Container(
+                            padding: EdgeInsets.all(3),
+                            height: 35,
+                            width: 70,
+                            child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        height: 35,
+                        width: 70,
+                        child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                      Container(
+                          padding: EdgeInsets.all(3),
+                          height: 35,
+                          width: 70,
+                          child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        height: 35,
+                        width: 70,
+                        child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        height: 35,
+                        width: 70,
+                        child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        height: 35,
+                        width: 70,
+                        child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(5,0,5,0),
+              height: 250,
+              width: double.infinity,
+              child: ListView.builder(
+                itemCount: myCases.length,
+                itemBuilder: (BuildContext context , int index){
+                  _navigateHome(BuildContext context) async {
+                    Event event =  Event(myCases[index]['id'].toString());
+                    final result = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyCases(
+                              event: event,
+                            )));
+                    print(result);
+                  }
+                  return Column(
+                    children: <Widget>[
+                      Table(
+                        border: TableBorder.all(color: Colors.black,width: 1.5),
+                        defaultVerticalAlignment: TableCellVerticalAlignment.top,
+                        children: <TableRow>[
+                          TableRow(
                             children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                              Container(
-                                padding: EdgeInsets.all(5),
-                                height: 70,
-                                width: 70,
-                                child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text(myCases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                  padding: EdgeInsets.all(3),
-                                  height: 70,
-                                  width: 70,
-                                  child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text(myCases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text(myCases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(3),
-                                height: 70,
-                                width: 70,
-                                child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                              Container(
-                                margin: EdgeInsets.all(3),
-                                color: Colors.blue,
-                                child: FlatButton(
-                                  onPressed: (){
-                                     _navigateHome(context);
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_forward,
-                                    color: Colors.white
+                              Column(
+                                children: <Widget>[
+                                  // Container(
+                                  //   padding: EdgeInsets.all(3),
+                                  //   height: 70,
+                                  //   width: 70,
+                                  //   child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                  Container(
+                                    padding: EdgeInsets.all(3),
+                                    height: 35,
+                                    width: 70,
+                                    child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  // Container(
+                                  //   padding: EdgeInsets.all(3),
+                                  //   height: 70,
+                                  //   width: 70,
+                                  //   child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                  Container(
+                                    padding: EdgeInsets.all(3),
+                                    height: 35,
+                                    width: 70,
+                                    child: Text(myCases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  // Container(
+                                  //     padding: EdgeInsets.all(3),
+                                  //     height: 70,
+                                  //     width: 70,
+                                  //     child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
+                                  Container(
+                                    padding: EdgeInsets.all(3),
+                                    height: 35,
+                                    width: 70,
+                                    child: Text(myCases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  // Container(
+                                  //   padding: EdgeInsets.all(3),
+                                  //   height: 70,
+                                  //   width: 70,
+                                  //   child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                  Container(
+                                    padding: EdgeInsets.all(3),
+                                    height: 35,
+                                    width: 70,
+                                    child: Text(myCases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  // Container(
+                                  //   padding: EdgeInsets.all(3),
+                                  //   height: 70,
+                                  //   width: 70,
+                                  //   child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                  Container(
+                                    padding: EdgeInsets.all(3),
+                                    height: 35,
+                                    width: 70,
+                                    child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  // Container(
+                                  //   padding: EdgeInsets.all(3),
+                                  //   height: 70,
+                                  //   width: 70,
+                                  //   child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
+
+                                  Container(
+                                    margin: EdgeInsets.all(3),
+                                    color: Colors.blue,
+                                    child: FlatButton(
+                                        onPressed: (){
+                                          _navigateHome(context);
+                                        },
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        )
+                                    ),
                                   ),
-                                ),
+                                ],
                               ),
                             ],
                           ),
                         ],
                       ),
                     ],
-                  ),
-                ],
-              );
-            },
-          ),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

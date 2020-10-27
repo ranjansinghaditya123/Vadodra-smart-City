@@ -34,11 +34,14 @@ class _AssignedsmallState extends State<Assignedsmall> {
 
 
   List<ListType> _dropdownTypeItems = [
-    ListType("DATE-DSC", "Oldest"),
-    ListType("DATE-ASC", "Newest"),
+    ListType("DATE-ASC", "Oldest"),
+    ListType("DATE-DSC", "Newest"),
     ListType("ID-ASC", "Id-Ascending"),
-    ListType("ID-DESc", "Id-Descending"),
+    ListType("ID-DSC", "Id-Descending")
   ];
+
+
+
 
   List<DropdownMenuItem<ListType>> _dropdownMenuItems;
   ListType _selectedItem;
@@ -103,10 +106,14 @@ class _AssignedsmallState extends State<Assignedsmall> {
    final body =  {
 
      "UID": username,
-      "TYPE" : _selectedItem,
+      "TYPE" : _selectedItem.value,
 
 
    };
+   print('Printing...body');
+   print(body);
+   print(_selectedItem);
+
    var data =  await http.post("http://117.197.122.139:3000/getOpenEventDetailsAfterSorting", headers: header, body: json.encode(body));
    var jsondata = json.decode(data.body);
 
@@ -156,7 +163,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                     value: _selectedItem,
                     items: _dropdownMenuItems,
                     onChanged: (value){
-                      setState(() {
+                       setState(() {
                         _selectedItem = value;
                       });
                     },
@@ -173,190 +180,194 @@ class _AssignedsmallState extends State<Assignedsmall> {
             )
           ],
         ),
-        body: Column(
+        body: ListView(
           children: <Widget>[
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-              child: Center(child: Text('Assigned Tickets',style: TextStyle(fontSize: 15),)),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(5,25,5,0),
-              height: 35,
-              width: double.infinity,
-              child: Table(
-                border: TableBorder.all(color: Colors.black,width: 1.5),
-                defaultVerticalAlignment: TableCellVerticalAlignment.top,
-                children:<TableRow>[
-                  TableRow(
-                    children: <Widget>[
-                      Column(
+            Column(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Center(child: Text('Assigned Tickets',style: TextStyle(fontSize: 15),)),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5,25,5,0),
+                  height: 35,
+                  width: double.infinity,
+                  child: Table(
+                    border: TableBorder.all(color: Colors.black,width: 1.5),
+                    defaultVerticalAlignment: TableCellVerticalAlignment.top,
+                    children:<TableRow>[
+                      TableRow(
                         children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(3),
+                                height: 35,
+                                width: 70,
+                                child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                            ],
+                          ),
                           Container(
                             padding: EdgeInsets.all(3),
                             height: 35,
                             width: 70,
-                            child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                            child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                          Container(
+                              padding: EdgeInsets.all(3),
+                              height: 35,
+                              width: 70,
+                              child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
+                          Container(
+                            padding: EdgeInsets.all(3),
+                            height: 35,
+                            width: 70,
+                            child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                          Container(
+                            padding: EdgeInsets.all(3),
+                            height: 35,
+                            width: 70,
+                            child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                          Container(
+                            padding: EdgeInsets.all(3),
+                            height: 35,
+                            width: 70,
+                            child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
                         ],
                       ),
-                      Container(
-                        padding: EdgeInsets.all(3),
-                        height: 35,
-                        width: 70,
-                        child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                      Container(
-                          padding: EdgeInsets.all(3),
-                          height: 35,
-                          width: 70,
-                          child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
-                      Container(
-                        padding: EdgeInsets.all(3),
-                        height: 35,
-                        width: 70,
-                        child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                      Container(
-                        padding: EdgeInsets.all(3),
-                        height: 35,
-                        width: 70,
-                        child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                      Container(
-                        padding: EdgeInsets.all(3),
-                        height: 35,
-                        width: 70,
-                        child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
                     ],
                   ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(5,0,5,0),
-              height: 250,
-              width: double.infinity,
-              child: ListView.builder(
-                itemCount: Assignedcases.length,
-                itemBuilder: (BuildContext context , int index){
-                  _navigateHome(BuildContext context) async {
-                    Event event =  Event(Assignedcases[index]['id'].toString());
-                    final result = await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Assigned(
-                              event: event,
-                            )));
-                    print(result);
-                  }
-                  return Column(
-                    children: <Widget>[
-                      Table(
-                        border: TableBorder.all(color: Colors.black,width: 1.5),
-                        defaultVerticalAlignment: TableCellVerticalAlignment.top,
-                        children: <TableRow>[
-                          TableRow(
-                            children: <Widget>[
-                              Column(
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5,0,5,0),
+                  height: 500,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    itemCount: Assignedcases.length,
+                    itemBuilder: (BuildContext context , int index){
+                      _navigateHome(BuildContext context) async {
+                        Event event =  Event(Assignedcases[index]['id'].toString());
+                        final result = await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Assigned(
+                                  event: event,
+                                )));
+                        print(result);
+                      }
+                      return Column(
+                        children: <Widget>[
+                          Table(
+                            border: TableBorder.all(color: Colors.black,width: 1.5),
+                            defaultVerticalAlignment: TableCellVerticalAlignment.top,
+                            children: <TableRow>[
+                              TableRow(
                                 children: <Widget>[
-                                  // Container(
-                                  //   padding: EdgeInsets.all(3),
-                                  //   height: 70,
-                                  //   width: 70,
-                                  //   child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                                  Container(
-                                    padding: EdgeInsets.all(3),
-                                    height: 35,
-                                    width: 70,
-                                    child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  // Container(
-                                  //   padding: EdgeInsets.all(3),
-                                  //   height: 70,
-                                  //   width: 70,
-                                  //   child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                                  Container(
-                                    padding: EdgeInsets.all(3),
-                                    height: 35,
-                                    width: 70,
-                                    child: Text(Assignedcases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  // Container(
-                                  //     padding: EdgeInsets.all(3),
-                                  //     height: 70,
-                                  //     width: 70,
-                                  //     child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
-                                  Container(
-                                    padding: EdgeInsets.all(3),
-                                    height: 35,
-                                    width: 70,
-                                    child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  // Container(
-                                  //   padding: EdgeInsets.all(3),
-                                  //   height: 70,
-                                  //   width: 70,
-                                  //   child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                                  Container(
-                                    padding: EdgeInsets.all(3),
-                                    height: 35,
-                                    width: 70,
-                                    child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  // Container(
-                                  //   padding: EdgeInsets.all(3),
-                                  //   height: 70,
-                                  //   width: 70,
-                                  //   child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
-                                  Container(
-                                    padding: EdgeInsets.all(3),
-                                    height: 35,
-                                    width: 70,
-                                    child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  // Container(
-                                  //   padding: EdgeInsets.all(3),
-                                  //   height: 70,
-                                  //   width: 70,
-                                  //   child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                  Column(
+                                    children: <Widget>[
+                                      // Container(
+                                      //   padding: EdgeInsets.all(3),
+                                      //   height: 70,
+                                      //   width: 70,
+                                      //   child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                      Container(
+                                        padding: EdgeInsets.all(3),
+                                        height: 35,
+                                        width: 70,
+                                        child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      // Container(
+                                      //   padding: EdgeInsets.all(3),
+                                      //   height: 70,
+                                      //   width: 70,
+                                      //   child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                      Container(
+                                        padding: EdgeInsets.all(3),
+                                        height: 35,
+                                        width: 70,
+                                        child: Text(Assignedcases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      // Container(
+                                      //     padding: EdgeInsets.all(3),
+                                      //     height: 70,
+                                      //     width: 70,
+                                      //     child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
+                                      Container(
+                                        padding: EdgeInsets.all(3),
+                                        height: 35,
+                                        width: 70,
+                                        child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      // Container(
+                                      //   padding: EdgeInsets.all(3),
+                                      //   height: 70,
+                                      //   width: 70,
+                                      //   child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                      Container(
+                                        padding: EdgeInsets.all(3),
+                                        height: 35,
+                                        width: 70,
+                                        child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      // Container(
+                                      //   padding: EdgeInsets.all(3),
+                                      //   height: 70,
+                                      //   width: 70,
+                                      //   child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                      Container(
+                                        padding: EdgeInsets.all(3),
+                                        height: 35,
+                                        width: 70,
+                                        child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      // Container(
+                                      //   padding: EdgeInsets.all(3),
+                                      //   height: 70,
+                                      //   width: 70,
+                                      //   child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
 
-                                  Container(
-                                    margin: EdgeInsets.all(3),
-                                    color: Colors.blue,
-                                    child: FlatButton(
-                                      onPressed: (){
-                                        _navigateHome(context);
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_forward,
-                                        color: Colors.white,
-                                      )
-                                    ),
+                                      Container(
+                                        margin: EdgeInsets.all(3),
+                                        color: Colors.blue,
+                                        child: FlatButton(
+                                            onPressed: (){
+                                              _navigateHome(context);
+                                            },
+                                            child: Icon(
+                                              Icons.arrow_forward,
+                                              color: Colors.white,
+                                            )
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ],
                           ),
                         ],
-                      ),
-                    ],
-                  );
-                },
-              ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ],
-        ),
+        )
       ),
     );
   }
@@ -374,4 +385,12 @@ class ListType {
   String name;
 
   ListType(this.value, this.name);
+
+
+  // Map toJson() => {
+  //   'name': name,
+  //   'value': value,
+  // };
+
+
 }

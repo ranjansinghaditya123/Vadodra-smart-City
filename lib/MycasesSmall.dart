@@ -179,34 +179,34 @@ class _CasessmallState extends State<Casessmall> {
                           Column(
                             children: <Widget>[
                               Container(
-                                padding: EdgeInsets.all(3),
+                                padding: EdgeInsets.all(1),
                                 height: 35,
                                 width: 70,
                                 child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
                             ],
                           ),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
                           Container(
-                              padding: EdgeInsets.all(3),
+                              padding: EdgeInsets.all(1),
                               height: 35,
                               width: 70,
                               child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
@@ -233,6 +233,7 @@ class _CasessmallState extends State<Casessmall> {
                         print(result);
                       }
                       return Column(
+
                         children: <Widget>[
                           Table(
                             border: TableBorder.all(color: Colors.black,width: 1.5),
@@ -248,7 +249,7 @@ class _CasessmallState extends State<Casessmall> {
                                       //   width: 70,
                                       //   child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
@@ -262,7 +263,7 @@ class _CasessmallState extends State<Casessmall> {
                                       //   width: 70,
                                       //   child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(myCases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -276,7 +277,7 @@ class _CasessmallState extends State<Casessmall> {
                                       //     width: 70,
                                       //     child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(myCases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -290,7 +291,7 @@ class _CasessmallState extends State<Casessmall> {
                                       //   width: 70,
                                       //   child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(myCases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -304,7 +305,7 @@ class _CasessmallState extends State<Casessmall> {
                                       //   width: 70,
                                       //   child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -319,7 +320,7 @@ class _CasessmallState extends State<Casessmall> {
                                       //   child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
 
                                       Container(
-                                        margin: EdgeInsets.all(3),
+                                        margin: EdgeInsets.all(1),
                                         color: Colors.blue,
                                         child: FlatButton(
                                             onPressed: (){

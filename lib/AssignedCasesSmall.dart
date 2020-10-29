@@ -201,34 +201,34 @@ class _AssignedsmallState extends State<Assignedsmall> {
                           Column(
                             children: <Widget>[
                               Container(
-                                padding: EdgeInsets.all(3),
+                                padding: EdgeInsets.all(1),
                                 height: 35,
                                 width: 70,
                                 child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
                             ],
                           ),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
                           Container(
-                              padding: EdgeInsets.all(3),
+                              padding: EdgeInsets.all(1),
                               height: 35,
                               width: 70,
                               child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
                           Container(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
                             child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
@@ -270,7 +270,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                       //   width: 70,
                                       //   child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
@@ -284,7 +284,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                       //   width: 70,
                                       //   child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(Assignedcases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -298,7 +298,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                       //     width: 70,
                                       //     child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -312,7 +312,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                       //   width: 70,
                                       //   child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
@@ -326,7 +326,7 @@ class _AssignedsmallState extends State<Assignedsmall> {
                                       //   width: 70,
                                       //   child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
                                         child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)

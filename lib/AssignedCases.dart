@@ -124,12 +124,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -138,12 +138,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text('Ticket Raised',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['chimpby'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -153,12 +153,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -167,12 +167,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text('Closed Time',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -181,12 +181,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text('Ticket Type',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -195,12 +195,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -209,12 +209,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text('Landmark',style: TextStyle(color: Colors.black,fontSize: 20),)),
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(Assignedcases[index]['landmark'],style: TextStyle(color: Colors.blue,fontSize: 16),)),
@@ -223,12 +223,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text('Title',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text(Assignedcases[index]['title'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
@@ -237,12 +237,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text('Description',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text(Assignedcases[index]['desc'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
@@ -251,7 +251,7 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text('Latitude',style: TextStyle(color: Colors.black,fontSize: 20),),),
@@ -265,12 +265,12 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text('Longitude',style: TextStyle(color: Colors.black,fontSize: 20),),),
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 70,
                               width: 70,
                               child: Text(Assignedcases[index]['longi'],style: TextStyle(color: Colors.blue,fontSize: 16),),),
@@ -279,7 +279,7 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 200,
                                 width: 200,
                                 child: Text(
@@ -288,7 +288,7 @@ class _AssignedState extends State<Assigned> {
                                       color: Colors.black, fontSize: 20),
                                 )),
                             Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(1),
                               height: 200,
                               width: 200,
                               child: Image.network(Assignedcases[index]['iocimgurl'],fit: BoxFit.fill,),),
@@ -297,7 +297,7 @@ class _AssignedState extends State<Assigned> {
                         TableRow(
                           children: <Widget>[
                             Container(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(1),
                                 height: 70,
                                 width: 70,
                                 child: Text(
@@ -306,7 +306,7 @@ class _AssignedState extends State<Assigned> {
                                       color: Colors.black, fontSize: 20),
                                 )),
                             Container(
-                              margin: EdgeInsets.all(5),
+                              margin: EdgeInsets.all(1),
                               color: Colors.blue,
                               child: FlatButton(
                                 onPressed: () {

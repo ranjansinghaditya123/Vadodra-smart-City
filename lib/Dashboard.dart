@@ -205,7 +205,7 @@ class _DashboardState extends State<Dashboard> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.all(10),
-                                  child: Text(count, style: TextStyle(color: Colors.white),),
+                                  child: Text(count, style: TextStyle(color: Colors.white,fontSize: 40),),
                                 ),
                               ],
                             ),
@@ -227,7 +227,7 @@ class _DashboardState extends State<Dashboard> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.all(10),
-                                  child: Text(count1, style: TextStyle(color: Colors.white),),
+                                  child: Text(count1, style: TextStyle(color: Colors.white,fontSize: 40),),
                                 ),
                               ],
                             ),

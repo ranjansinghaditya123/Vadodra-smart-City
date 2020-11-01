@@ -119,7 +119,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Ticket Id',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                               padding: EdgeInsets.all(1),
@@ -128,7 +128,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['id'].toString(),
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 16),
+                                    color: Colors.black, fontSize: 16),
                               )),
                         ],
                       ),
@@ -141,7 +141,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Ticket Closed',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                               padding: EdgeInsets.all(1),
@@ -150,7 +150,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['chresby'].toString(),
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 16),
+                                    color: Colors.black, fontSize: 16),
                               )),
                         ],
                       ),
@@ -163,7 +163,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Closed Date/Time',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                               padding: EdgeInsets.all(1),
@@ -172,7 +172,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['closedtime'].toString(),
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 16),
+                                    color: Colors.black, fontSize: 16),
                               )),
                         ],
                       ),
@@ -186,7 +186,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Ticket Raised',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                               padding: EdgeInsets.all(1),
@@ -195,7 +195,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['chimpby'].toString(),
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 16),
+                                    color: Colors.black, fontSize: 16),
                               )),
                         ],
                       ),
@@ -208,7 +208,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Ticket Type',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                               padding: EdgeInsets.all(1),
@@ -217,7 +217,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['type'].toString(),
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 16),
+                                    color: Colors.black, fontSize: 16),
                               )),
                         ],
                       ),
@@ -230,7 +230,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Priority',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                               padding: EdgeInsets.all(1),
@@ -239,7 +239,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 myCases[index]['priority'].toString(),
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 16),
+                                    color: Colors.black, fontSize: 16),
                               )),
                         ],
                       ),
@@ -252,7 +252,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               'Landmark',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 20),
+                                  TextStyle(color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                             ),
                           ),
                           Container(
@@ -262,7 +262,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['landmark'].toString(),
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 16),
+                                  TextStyle(color: Colors.black, fontSize: 16),
                             ),
                           ),
                         ],
@@ -276,7 +276,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               'Title',
                               style:
-                              TextStyle(color: Colors.black, fontSize: 20),
+                              TextStyle(color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                             ),
                           ),
                           Container(
@@ -286,7 +286,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['title'].toString(),
                               style:
-                              TextStyle(color: Colors.blue, fontSize: 16),
+                              TextStyle(color: Colors.black, fontSize: 16),
                             ),
                           ),
                         ],
@@ -300,7 +300,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               'Description',
                               style:
-                              TextStyle(color: Colors.black, fontSize: 20),
+                              TextStyle(color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                             ),
                           ),
                           Container(
@@ -310,7 +310,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['desc'].toString(),
                               style:
-                              TextStyle(color: Colors.blue, fontSize: 16),
+                              TextStyle(color: Colors.black, fontSize: 16),
                             ),
                           ),
                         ],
@@ -324,7 +324,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               'Latitude',
                               style:
-                              TextStyle(color: Colors.black, fontSize: 20),
+                              TextStyle(color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                             ),
                           ),
                           Container(
@@ -334,7 +334,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['lati'].toString(),
                               style:
-                              TextStyle(color: Colors.blue, fontSize: 16),
+                              TextStyle(color: Colors.black, fontSize: 16),
                             ),
                           ),
                         ],
@@ -348,7 +348,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               'Longitude',
                               style:
-                              TextStyle(color: Colors.black, fontSize: 20),
+                              TextStyle(color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                             ),
                           ),
                           Container(
@@ -358,7 +358,7 @@ class _MyCasesState extends State<MyCases> {
                             child: Text(
                               myCases[index]['longi'].toString(),
                               style:
-                              TextStyle(color: Colors.blue, fontSize: 16),
+                              TextStyle(color: Colors.black, fontSize: 16),
                             ),
                           ),
                         ],
@@ -372,7 +372,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Previous Image',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                             padding: EdgeInsets.all(1),
@@ -390,7 +390,7 @@ class _MyCasesState extends State<MyCases> {
                               child: Text(
                                 'Photo Taken While Closeing',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 20),
+                                    color: Colors.black, fontSize: 20,fontWeight:FontWeight.bold),
                               )),
                           Container(
                             padding: EdgeInsets.all(1),

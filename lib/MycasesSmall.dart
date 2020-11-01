@@ -182,34 +182,34 @@ class _CasessmallState extends State<Casessmall> {
                                 padding: EdgeInsets.all(1),
                                 height: 35,
                                 width: 70,
-                                child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                                child: Text('Ticket Id',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),),
                             ],
                           ),
                           Container(
                             padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
-                            child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                            child: Text('Date',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),),
                           Container(
                               padding: EdgeInsets.all(1),
                               height: 35,
                               width: 70,
-                              child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14),)),
+                              child: Text('Time',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),)),
                           Container(
                             padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
-                            child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                            child: Text('Type',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),),
                           Container(
                             padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
-                            child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                            child: Text('Priority',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),),
                           Container(
                             padding: EdgeInsets.all(1),
                             height: 35,
                             width: 70,
-                            child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14),),),
+                            child: Text('Details',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),),
                         ],
                       ),
                     ],
@@ -252,7 +252,7 @@ class _CasessmallState extends State<Casessmall> {
                                         padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
-                                        child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.blue,fontSize: 12),),),
+                                        child: Text(myCases[index]['id'].toString(),style: TextStyle(color: Colors.black,fontSize: 12),),),
                                     ],
                                   ),
                                   Column(
@@ -266,7 +266,7 @@ class _CasessmallState extends State<Casessmall> {
                                         padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
-                                        child: Text(myCases[index]['closedtime'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                        child: Text(myCases[index]['closedtime'],style: TextStyle(color: Colors.black,fontSize: 12),),)
                                     ],
                                   ),
                                   Column(
@@ -280,7 +280,7 @@ class _CasessmallState extends State<Casessmall> {
                                         padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
-                                        child: Text(myCases[index]['time'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                        child: Text(myCases[index]['time'],style: TextStyle(color: Colors.black,fontSize: 12),),)
                                     ],
                                   ),
                                   Column(
@@ -294,7 +294,7 @@ class _CasessmallState extends State<Casessmall> {
                                         padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
-                                        child: Text(myCases[index]['type'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                        child: Text(myCases[index]['type'],style: TextStyle(color: Colors.black,fontSize: 12),),)
                                     ],
                                   ),
                                   Column(
@@ -308,7 +308,7 @@ class _CasessmallState extends State<Casessmall> {
                                         padding: EdgeInsets.all(1),
                                         height: 35,
                                         width: 70,
-                                        child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.blue,fontSize: 12),),)
+                                        child: Text(myCases[index]['priority'],style: TextStyle(color: Colors.black,fontSize: 12),),)
                                     ],
                                   ),
                                   Column(

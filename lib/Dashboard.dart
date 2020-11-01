@@ -158,10 +158,10 @@ class _DashboardState extends State<Dashboard> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Container(
-                              child: Text('User Name: ',style: TextStyle(color: Colors.black,fontSize: 15)),
+                              child: Text('User Name: ',style: TextStyle(color: Colors.black,fontSize: 15,fontWeight:FontWeight.bold)),
                             ),
                             Container(
-                              child: Text(loggedInUser,style: TextStyle(color: Colors.blue,fontSize: 12)),
+                              child: Text(loggedInUser,style: TextStyle(color: Colors.black,fontSize: 12)),
                             ),
                           ],
                         ),
@@ -176,10 +176,10 @@ class _DashboardState extends State<Dashboard> {
                         Row(
                           children: <Widget>[
                             Container(
-                              child: Text('User Logged Since: ',style: TextStyle(color: Colors.black,fontSize: 15)),
+                              child: Text('User Logged Since: ',style: TextStyle(color: Colors.black,fontSize: 15,fontWeight:FontWeight.bold)),
                             ),
                             Container(
-                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.blue,fontSize: 12)),
+                              child: Text(GetDateAndTime(),style: TextStyle(color: Colors.black,fontSize: 12)),
                             ),
                           ],
                           crossAxisAlignment: CrossAxisAlignment.start,
